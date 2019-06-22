@@ -1,17 +1,35 @@
 var calculatorModule = function() {
     var memory=0;
     var total=0;
-    var register =0;
+    var register = 0;
+    var arr = [];
 
     function getRegister (){
         return register;
     }
 
     function load(x){
-      this.validation(x);
-       total = x;
-       console.log(total);
-       return total;
+      arr[arr.length] = x;
+      //wanna put a comma after every third entry from the end
+      console.log(arr);
+      total = parseInt(arr.join(""));
+      return arr.join("");
+    }
+
+    function clear(){
+        arr = [];
+        total = 0;
+        memory = 0;
+        return arr;
+    }
+
+    function addDeci (){
+        if (arr.indexOf(".")===-1){
+            arr.push(".");
+            total=parseInt(arr.join(""));
+            console.log(arr);
+        }
+        return arr.join("");
     }
 
     function equal(){
@@ -21,7 +39,8 @@ var calculatorModule = function() {
     function add(x) {
        this.validation(x);
        total += x;
-       return total;
+       showNum(total);
+       console.log(total);
     }
 
     function subtract(x){
@@ -78,10 +97,11 @@ var calculatorModule = function() {
         }
     }
 
-
  return {
      getRegister: getRegister,
      load: load,
+     clear: clear,
+     addDeci: addDeci,
      equal: equal,
      add: add,
      subtract: subtract,

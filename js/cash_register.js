@@ -13,11 +13,33 @@ var calculator = document.querySelector ("#calculator");
 
 var numberButtons = document.querySelectorAll (".number")
 
-console.log(numberButtons);
+// console.log(numberButtons);
+
+function putDisplay (func){
+    var display = document.querySelector ("#display");
+    display.value = func;
+}
 
 for (i=0;i<numberButtons.length;i++){
-    console.log(i);
-    console.log('numberButtons',numberButtons[i].value);
-    numberButtons[i].addEventListener('click', function(){calc.load(parseInt(this.value))});
+    numberButtons[i].addEventListener('click', function(){
+        let num = calc.load(parseInt(this.value));
+        putDisplay(num);
+    });
 }
+
+document.querySelector("#clear").addEventListener('click', function() {
+    calc.clear();
+    putDisplay(calc.clear());
+});
+
+document.querySelector("#balance").addEventListener('click',function(){
+    calc.getRegister();
+    putDisplay(calc.getRegister());
+})
+
+document.querySelector("#deci").addEventListener('click',function(){
+    let num = calc.addDeci();
+    putDisplay(num);
+})
+
 })();

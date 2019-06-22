@@ -13,7 +13,7 @@
     <main>
         <div id="menu">menu</div>
             <div id="calculator">
-                <div id="display">
+                <div id="displayContainer">
                     <input type="text" name="display" id="display" value="" placeholder="$0.00">
                 </div>
                 <div id="subContainer">
@@ -21,7 +21,7 @@
                         <button class="function">&divide</button>
                         <button class="function">=</button>
                         <button class="function">x</button>
-                        <button class="function">C/CE</button>
+                        <button id = "clear" class="function">C/CE</button>
                     </div>
                     <div id="numerics">
                         <div class="row">
@@ -32,7 +32,7 @@
                         <div class="row">
                             <button class="number" value="4">4</button>
                             <button class="number" value="5">5</button>
-                            <button class="number">6</button>
+                            <button class="number" value="6">6</button>
                         </div>
                         <div class="row">
                             <button class="number" value="1">1</button>
@@ -42,7 +42,7 @@
                         <div class="row">
                             <button class="number" value="0">0</button>
                             <button class="number" value="00">00</button>
-                            <button class="number" value=".">.</button>
+                            <button id ="deci" class="function">.</button>
                         </div>
                     </div>
                     <div id="functionsRight">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div id="functionsBottom">
-                    <button class="function">BALANCE</button>
+                    <button id="balance" class="function">BALANCE</button>
                     <button class="function">DEPOSIT</button>
                     <button class="function">WITHDRAW</button>
                     <button class="function">ENTER</button>
