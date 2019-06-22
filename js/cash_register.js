@@ -7,22 +7,22 @@
 
 var calc = calculatorModule();
 
-var calculator = document.querySelector ("#calculator");
-
-// console.log(calculator);
-
 var numberButtons = document.querySelectorAll (".number")
-
-// console.log(numberButtons);
 
 function putDisplay (func){
     var display = document.querySelector ("#display");
-    display.value = func;
+    display.value = numberWithCommas(func);
+}
+
+function numberWithCommas(x) {
+    var parts = x.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
 }
 
 for (i=0;i<numberButtons.length;i++){
     numberButtons[i].addEventListener('click', function(){
-        let num = calc.load(parseInt(this.value));
+        let num = calc.load(this.value);
         putDisplay(num);
     });
 }
