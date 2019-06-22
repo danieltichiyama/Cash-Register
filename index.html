@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Golden Pork - POS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+    <main>
+        <div id="menu">menu</div>
+            <div id="calculator">
+                <div id="display">
+                    <input type="text" name="display" id="display" value="" placeholder="$0.00">
+                </div>
+                <div id="subContainer">
+                    <div id="functionsleft">
+                        <button class="function">&divide</button>
+                        <button class="function">=</button>
+                        <button class="function">x</button>
+                        <button class="function">C/CE</button>
+                    </div>
+                    <div id="numerics">
+                        <div class="row">
+                            <button class="number" value="7">7</button>
+                            <button class="number" value="8">8</button>
+                            <button class="number" value="9">9</button>
+                        </div>
+                        <div class="row">
+                            <button class="number" value="4">4</button>
+                            <button class="number" value="5">5</button>
+                            <button class="number">6</button>
+                        </div>
+                        <div class="row">
+                            <button class="number" value="1">1</button>
+                            <button class="number" value="2">2</button>
+                            <button class="number" value="3">3</button>
+                        </div>
+                        <div class="row">
+                            <button class="number" value="0">0</button>
+                            <button class="number" value="00">00</button>
+                            <button class="number" value=".">.</button>
+                        </div>
+                    </div>
+                    <div id="functionsRight">
+                        <button class="function">-</button>
+                        <button id = 'plus' class="function">+</button>
+                    </div>
+                </div>
+                <div id="functionsBottom">
+                    <button class="function">BALANCE</button>
+                    <button class="function">DEPOSIT</button>
+                    <button class="function">WITHDRAW</button>
+                    <button class="function">ENTER</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="js/calculator.js"></script>
+    <script src="js/cash_register.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+main {
+    display: flex;
+    flex-direction: row;
+}
+
+#menu {
+    width:50vw;
+    height:75vh;
+    /* border: 1px blue dotted; */
+}
+
+#calculator {
+    width:50vw;
+    height:75vh;
+    /* border: 1px red dotted; */
+    display:flex;
+    flex-direction: column;
+    padding-right:20px;
+}
+
+#display {
+    width: 100%;
+    height:20%;
+    text-align: right;
+    margin-bottom:10px;
+    /* border: 1px orange solid; */
+}
+
+#display input {
+    height:100%;
+    width:100%;
+    font-size:300%;
+    border-radius:10px;
+    padding-right:10px;
+}
+
+#display input:before{
+    content: '$';
+}
+
+#subContainer{
+    display: flex;
+    flex-direction:row;
+    width:100%;
+    height: 100%;
+}
+#functionsleft{
+    display:flex;
+    flex-direction:column;
+    /* border: 1px purple dotted; */
+    width:20%;
+    height:100%;
+    margin-right:10px;  
+    padding:0;
+}
+
+#functionsRight{
+    display:flex;
+    flex-direction:column;
+    width:20%;
+    height:inherit;
+    /* justify-content:space-around; */
+}
+
+#functionsBottom {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+}
+
+#functionsBottom .function{
+    width:100%;
+    height:100px;
+}
+
+#calculator button {
+    height:100%;
+    font-size:50%;
+    margin: 5px;
+    border-radius:10px;
+}
+
+#calculator button:focus {
+    outline:0;
+}
+
+#calculator button:hover {
+    background-color: rgba(0,100,200,.5);
+    color: white;
+}
+
+#calculator button:active {
+    background-color:rgba(0,100,200,1)
+}
+
+#calculator .function {
+    width:100%;
+    font-size:150%;
+}
+
+#numerics {
+    display:flex;
+    flex-direction:column;
+    /* border:1px green solid; */
+    width:100%;
+    height:100%;
+}
+
+.row {
+    display: flex;
+    flex-direction:row;
+    width:100%;
+    height:100%;
+    margin-bottom:10px;
+    /* border:1px solid red; */
+}
+
+#calculator .number {
+    font-size:20px;
+    height:100%;
+    width:inherit;
+}
+
+#plus{
+    background-color: rgba(230,10,10,1);
+    color:white;
+}
