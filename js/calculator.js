@@ -10,10 +10,9 @@ var calculatorModule = function() {
 
     function load(x){
       arr[arr.length] = x;
-      //wanna put a comma after every third entry from the end
-      console.log(arr);
-      total = parseInt(arr.join(""));
-      return arr.join("");
+      memory = parseFloat(arr.join(""));
+      console.log("load:arr",arr, "load:memory",memory)
+      return parseFloat(arr.join(""));
     }
 
     function clear(){
@@ -26,8 +25,6 @@ var calculatorModule = function() {
     function addDeci (){
         if (arr.indexOf(".")===-1){
             arr.push(".");
-            total=parseInt(arr.join(""));
-            console.log(arr);
         }
         return arr.join("");
     }
@@ -37,10 +34,12 @@ var calculatorModule = function() {
     }
 
     function add(x) {
-       this.validation(x);
-       total += x;
-       showNum(total);
-       console.log(total);
+        console.log ("add:x", x);
+        console.log("add:total", total);
+        total += x;
+        arr = [];
+        console.log('add:memory ',memory,'add:total ',total,"add:arr ", arr)
+        return total;
     }
 
     function subtract(x){
@@ -62,9 +61,6 @@ var calculatorModule = function() {
     }
 
     function recallMemory(){
-        if (typeof memory !=="number"){
-            return 'ERR';
-        }
         return memory;
     }
 

@@ -23,6 +23,7 @@ main {
     height:20%;
     text-align: right;
     margin-bottom:10px;
+    border-radius:10px;
     /* border: 1px orange solid; */
 }
 
@@ -35,8 +36,8 @@ main {
     text-align:right;
 }
 
-#displayContainer input:before{
-    content: '$';
+#displayContainer input:hover {
+    box-shadow: 
 }
 
 #subContainer{

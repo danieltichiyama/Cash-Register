@@ -20,6 +20,14 @@ function numberWithCommas(x) {
     return parts.join(".");
 }
 
+function wipeDisplay (){
+    display.value="";
+    for (i=0;i<numberButtons.length;i++){
+    numberButtons[i].removeEventListener('click',wipeDisplay);
+    };
+    display.value=this.value;
+}
+
 for (i=0;i<numberButtons.length;i++){
     numberButtons[i].addEventListener('click', function(){
         let num = calc.load(this.value);
@@ -41,5 +49,14 @@ document.querySelector("#deci").addEventListener('click',function(){
     let num = calc.addDeci();
     putDisplay(num);
 })
+
+document.querySelector("#plus").addEventListener('click',function(){
+    let num = calc.add(calc.recallMemory());
+    putDisplay(num);
+    for(i=0;i<numberButtons.length;i++){
+        numberButtons[i].addEventListener('click', wipeDisplay);
+    }
+    
+});
 
 })();
