@@ -54,6 +54,7 @@ for (i=0;i<functionButtons.length;i++){
     functionButtons[i].addEventListener('click', function (){
         calc.load(parseFloat(numberWithoutCommas(display.value)));
         calc.load(this.value);
+        console.log(typeof calc.calculate());
         if (typeof calc.calculate()==="number"){
         display.value = calc.calculate();
         }
@@ -64,11 +65,13 @@ for (i=0;i<functionButtons.length;i++){
 for (i = 0;i<registerButtons.length;i++){
     registerButtons[i].addEventListener('click',function(){
         if (this.value ==="deposit"){
-            display.value = calc.deposit (parseFloat(numberWithoutCommas(display.value)));
+            var deposit = calc.deposit (parseFloat(numberWithoutCommas(display.value)));
+            display.value = "**DEP: "+ deposit +"**";
         }else if(this.value ==="withdraw"){
-            display.value = calc.withdraw (parseFloat(numberWithoutCommas(display.value)));
+            var withdraw = calc.withdraw (parseFloat(numberWithoutCommas(display.value)));
+            display.value = "**W/D: "+ withdraw +"**";
         }else if (this.value ==="balance"){
-            display.value = calc.getRegister();
+            display.value = "**BAL: "+ calc.getRegister()+"**";
         }
         addWipe();
     })
