@@ -15,7 +15,8 @@ var str = "";
 
 function putDisplay (){
     str = str.concat(this.value);
-    display.value = numberWithCommas(str);
+    // newStr = "$"+str;
+    display.value = "$"+ numberWithCommas(str);
 }
 
 function numberWithCommas(x) {
@@ -43,8 +44,18 @@ function wipeDisplay (){
     numberButtons[i].removeEventListener('click',wipeDisplay);
     };
     str=this.value;
-    display.value = numberWithCommas(str);
+    display.value = "$" + numberWithCommas(str);
 }
+
+function removeDollarSign (){
+    var withOut = numberWithoutCommas(display.value)
+    var disValArr = withOut.split("");
+    // console.log (disValArr);
+    disValArr.shift();
+    return disValArr.join("");
+}
+
+// console.log(removeDollarSign());
 
 for (i=0;i<numberButtons.length;i++){
     numberButtons[i].addEventListener('click', putDisplay);
@@ -52,11 +63,12 @@ for (i=0;i<numberButtons.length;i++){
 
 for (i=0;i<functionButtons.length;i++){
     functionButtons[i].addEventListener('click', function (){
-        calc.load(parseFloat(numberWithoutCommas(display.value)));
+        calc.load(parseFloat(str));
         calc.load(this.value);
+        var test = calc.calculate();
         console.log(typeof calc.calculate());
         if (typeof calc.calculate()==="number"){
-        display.value = calc.calculate();
+        display.value = "$"+ numberWithCommas(test.toString());
         }
         addWipe();
     });
@@ -65,23 +77,24 @@ for (i=0;i<functionButtons.length;i++){
 for (i = 0;i<registerButtons.length;i++){
     registerButtons[i].addEventListener('click',function(){
         if (this.value ==="deposit"){
-            var deposit = calc.deposit (parseFloat(numberWithoutCommas(display.value)));
-            display.value = "**DEP: "+ deposit +"**";
+            var deposit = calc.deposit (parseFloat(numberWithoutCommas(removeDollarSign())));
+            display.value = "**DEP: $"+ deposit +"**";
         }else if(this.value ==="withdraw"){
-            var withdraw = calc.withdraw (parseFloat(numberWithoutCommas(display.value)));
-            display.value = "**W/D: "+ withdraw +"**";
+            var withdraw = calc.withdraw (parseFloat(numberWithoutCommas(removeDollarSign())));
+            display.value = "**W/D: $"+ withdraw +"**";
         }else if (this.value ==="balance"){
-            display.value = "**BAL: "+ calc.getRegister()+"**";
+            display.value = "**BAL: $"+ calc.getRegister()+"**";
         }
         addWipe();
     })
 }
 document.querySelector("#clear").addEventListener('click',function(){
-    display.value = "CLEARED";
+    display.value = "**CLEARED**";
     calc.clear();
     addWipe;
 });
 
-document.querySelector
+
+
 
 })();

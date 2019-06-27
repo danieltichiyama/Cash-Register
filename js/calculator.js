@@ -8,6 +8,7 @@ var calculatorModule = function() {
         return register;
     }
 
+
     function load(x){
       console.log(x);
       if (parseFloat(x) !== "number"){
@@ -15,7 +16,7 @@ var calculatorModule = function() {
           console.log("load:memory",memory);
           return memory[memory.length-1];
       }
-      memory[memory.length] = parseFloat(x);
+      memory[memory.length] = Math.round(x*100)/100;
       console.log("load:memory",memory);
       return memory[memory.length];
     };
@@ -48,7 +49,7 @@ var calculatorModule = function() {
                 total = res;
                 console.log("calculate:memory",memory,"calculate:total",total)
             }else if(memory[i]==="/"){
-                var res = divide(memory[i-1],memory[i+1]); 
+                var res = Math.round(divide(memory[i-1],memory[i+1])*100)/100; 
                 memory.splice(0,3,res);
                 total = res;
                 console.log("calculate:memory",memory,"calculate:total",total)
