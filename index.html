@@ -14,14 +14,15 @@
         <div id="menu">
             <div id="container">
                 <nav id="mainMenu">
-                    <h3 style = "font-size:30px">Menu</h3>
-                    <button class="category">Ramen</button>
-                    <button class="category">Sides</button>
-                    <button class="category">Drinks</button>
-                    <button class="category">Desserts</button>
+                    <h3 style = "font-size:30px;">Menu</h3>
                 </nav>
-                <div id = "itemList">
-                    itemList
+                <div id = "items"></div>
+                <div id="menuDisplay">
+                    <div id="ticket">
+                            TICKET
+                    </div>
+                    <div id = "ticketTotal" style = "text-align: right;word-spacing: 100px;">Total <span id = "value">$0.00</span></div>
+                    <input type="text" name="notes" id="notes" placeholder="Notes">
                 </div>
             </div>
         </div>
@@ -74,5 +75,6 @@
     </main>
     <script src="js/calculator.js"></script>
     <script src="js/cash_register.js"></script>
+    <script src="js/menu.js"></script>
 </body>
 </html>

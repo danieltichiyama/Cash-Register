@@ -19,6 +19,8 @@ var menuItems = [
 var items = document.getElementById("items");
 var mainMenu = document.getElementById("mainMenu");
 
+var total = 0;
+
 for (i=0;i<mainMenuArr.length;i++){
     var mainMenuButton = document.createElement("button");
     mainMenuButton.className = "menu";
@@ -47,12 +49,18 @@ function makeSubMenu (){
                 var newLine = document.createElement("li");
                 var minusButton = document.createElement ("button");
                 var priceBox = document.createElement ("div");
+                var ticketTotal = document.getElementById("value");
                 priceBox.innerHTML = this.value;
                 minusButton.innerHTML = "x";
+                minusButton.style.cssText = "line-height:15px;padding-bottom: 5px"
                 newLine.innerHTML = this.innerHTML +" ";
                 newLine.appendChild (priceBox);
                 newLine.appendChild (minusButton);
                 ticket.appendChild (newLine);
+                total += parseFloat(this.value);
+                ticketTotal.innerHTML = "$" + total;
+
+
             })
             //add event listener to add button.value to the display.value here
             section.appendChild(button);

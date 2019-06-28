@@ -8,15 +8,15 @@ main {
     height:95vh;
     border-right: 1px black solid;
     margin-right:10px;
-    color:rgb(250, 167, 59);
+    color:black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 #menu button {
-    border: 3px rgb(255, 201, 131) solid;
+    border:2px black solid;
     font-size: 20px;
-    background: rgb(250, 167, 59);
-    color: white;
+    /* background: rgb(250, 167, 59); */
+    color:black;
 }
 
 #menu button:focus {
@@ -26,6 +26,8 @@ main {
 #menu button:hover {
     background: rgb(241, 137, 0);
     color: white;
+    border: 2px solid rgb(250, 167, 59);
+    box-shadow: 1px 1px 10px orange;
 }
 
 #menu button:active {
@@ -41,29 +43,100 @@ main {
 }
 
 #container #mainMenu {
-    width: 20%;
-    border: 1px gray solid;
-    padding: 20px;
+    border-right: 2px gray solid;
+    width: 30%;
+    padding: 1px;
     display:flex;
     flex-direction:column;
     list-style: none;
-    justify-content:  space-evenly;
+    justify-content:  flex-start;
     align-items: center;
 }
 
-#mainMenu .category {
+#menu .menu {
     display:flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 95%;
     height:100px;
-    border-radius: 20px;
+    border-radius: 5px;
+    margin-bottom: 1vh;
 }
 
-#container #itemList {
-    width:inherit;
+#container #items {
+    width:80%;
     padding: 20px;
+    /* border: 1px dashed blue; */
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#menuDisplay{
+    display:flex;
+    flex-direction:column;
+    width:40%;
+}
+
+#ticket {
+    height:90%;
+    width:100%;
+    border: 1px dashed orange;
+}
+
+#notes {
+    height:10%;
+    width:100%;
+    border: 1px dotted purple;
+    font-size: 24px;
+}
+
+#items section {
+    /* border: 1px dotted red; */
+    height:100%;
+    width: 30%;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    overflow: scroll;
+    align-items: center;
+}
+
+#items .menu1 {
+    height: 75px;
+    border-radius: 5px;
+    width:99%;
+    margin-bottom: 5vh;
+}
+
+#ticket {
+    display:flex;
+    flex-direction:column;
+}
+
+#ticket li {
+    display: flex;
     flex-direction:row;
+    align-items: center;
+    justify-content: flex-end;
+    font-size:16px;
+    /* border: 1px dotted black; */
+}
+
+#ticket div {
+    text-align: end;
+    width: 30%;
+    margin-right:10px;
+    /* border: 1px black dotted; */
+}
+
+#ticket button {
+    border-radius:20px;
+    margin-bottom: 2px;
+    display:flex;
+    align-items: center;
+
 }
 
 #calculator {
