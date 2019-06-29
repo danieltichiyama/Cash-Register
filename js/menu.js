@@ -43,7 +43,12 @@ for (i=0;i<mainMenuArr.length;i++){
 // }
 
 function removeItem(){
-    
+    var thisLi = this.closest ("li");
+    console.log(thisLi);
+    thisLi.style.cssText = "display:none;"
+    console.log(this.value);
+    total += parseFloat(this.value);
+    ticketTotal.innerHTML = "$" + total;
 }
 
 function makeSubMenu (){
