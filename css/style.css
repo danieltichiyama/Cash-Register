@@ -225,6 +225,7 @@ main {
 #calculator button:hover {
     background-color: rgba(0,100,200,.5);
     color: white;
+    box-shadow: 1px 1px 10px rgba(20, 100,200,1);
 }
 
 #calculator button:active {

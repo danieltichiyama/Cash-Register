@@ -32,6 +32,20 @@ for (i=0;i<mainMenuArr.length;i++){
     mainMenu.appendChild (mainMenuButton);
 };
 
+// function formatMoney (str){
+//     var indexOfDec = str.indexOf (".");
+//     if (indexOfDec === -1){
+//         return str;
+//     };
+
+//     if (str.length )
+//     str.length = indexOfDec
+// }
+
+function removeItem(){
+    
+}
+
 function makeSubMenu (){
     var section = document.createElement("section");
     section.id = this.innerHTML;
@@ -44,23 +58,27 @@ function makeSubMenu (){
             button.value = menuItems[i].price;
             button.innerHTML = menuItems[i].name;
 
+            // (v) adds item to ticket
             button.addEventListener("click",function (){
                 var ticket = document.getElementById("ticket");
                 var newLine = document.createElement("li");
                 var minusButton = document.createElement ("button");
                 var priceBox = document.createElement ("div");
                 var ticketTotal = document.getElementById("value");
+
                 priceBox.innerHTML = this.value;
                 minusButton.innerHTML = "x";
-                minusButton.style.cssText = "line-height:15px;padding-bottom: 5px"
+                minusButton.style.cssText = "line-height:15px;padding-bottom: 5px";
+                minusButton.value = "-"+ this.value;
+                minusButton.addEventListener("click",removeItem);
+                
                 newLine.innerHTML = this.innerHTML +" ";
                 newLine.appendChild (priceBox);
                 newLine.appendChild (minusButton);
+                
                 ticket.appendChild (newLine);
                 total += parseFloat(this.value);
                 ticketTotal.innerHTML = "$" + total;
-
-
             })
             //add event listener to add button.value to the display.value here
             section.appendChild(button);
