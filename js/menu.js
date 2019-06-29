@@ -1,4 +1,4 @@
-var menuModule = (function (){
+var menuModule = function (){
 
 var mainMenuArr = ["Ramen","Rice","Sides","Drinks","Desserts"];
 var menuItems = [
@@ -102,4 +102,11 @@ function makeSubMenu (){
     }
 };
 
-})();
+function getTotal (){
+    return total;
+}
+
+return {
+    getTotal:getTotal,
+}
+};

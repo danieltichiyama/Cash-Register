@@ -6,6 +6,7 @@
 (function (){
 
 var calc = calculatorModule();
+var menuMod = menuModule();
 
 var numberButtons = document.querySelectorAll (".number");
 var functionButtons = document.querySelectorAll(".function");
@@ -66,7 +67,6 @@ for (i=0;i<functionButtons.length;i++){
         calc.load(parseFloat(str));
         calc.load(this.value);
         var test = calc.calculate();
-        console.log(typeof calc.calculate());
         if (typeof calc.calculate()==="number"){
         display.value = "$"+ numberWithCommas(test.toString());
         }
@@ -84,6 +84,11 @@ for (i = 0;i<registerButtons.length;i++){
             display.value = "**W/D: $"+ withdraw +"**";
         }else if (this.value ==="balance"){
             display.value = "**BAL: $"+ calc.getRegister()+"**";
+        }else if (this.value ==="loadTicket"){
+            console.log(typeof menuMod.getTotal(),menuMod.getTotal());
+            str = menuMod.getTotal();
+            display.value = menuMod.getTotal();
+            console.log(typeof display.value, "typeof display.value");
         }
         addWipe();
     })

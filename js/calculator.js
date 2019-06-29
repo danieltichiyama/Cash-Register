@@ -10,7 +10,7 @@ var calculatorModule = function() {
 
 
     function load(x){
-      console.log(x);
+      console.log("x",x);
       if (parseFloat(x) !== "number"){
           memory[memory.length] = x;
           console.log("load:memory",memory);
