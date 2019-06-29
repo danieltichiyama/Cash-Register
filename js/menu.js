@@ -43,12 +43,14 @@ for (i=0;i<mainMenuArr.length;i++){
 // }
 
 function removeItem(){
+    var ticketTotal = document.getElementById("value");
     var thisLi = this.closest ("li");
     console.log(thisLi);
     thisLi.style.cssText = "display:none;"
     console.log(this.value);
     total += parseFloat(this.value);
     ticketTotal.innerHTML = "$" + total;
+    console.log(total);
 }
 
 function makeSubMenu (){
@@ -83,6 +85,7 @@ function makeSubMenu (){
                 
                 ticket.appendChild (newLine);
                 total += parseFloat(this.value);
+                console.log(total);
                 ticketTotal.innerHTML = "$" + total;
             })
             //add event listener to add button.value to the display.value here
